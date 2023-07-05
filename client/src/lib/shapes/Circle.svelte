@@ -15,18 +15,17 @@
     }
 
     function click(e) {
-        // const id = e.target.dataset.id
         let __seat = $image.seats.find(item => (item && item.id === id))
         $seat = __seat || {id}
         let [clickedEl] = document.getElementsByClassName('clicked')
         clickedEl && clickedEl.classList.remove('clicked')
+        e.target.classList.add('clicked')
     }
 </script>
 
 <circle
         {...$$props}
         on:click={click}
-        class:clicked={clicked}
         class:done={done}
         class:partial={partial}
 ></circle>
